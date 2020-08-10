@@ -37,7 +37,14 @@ if(isset($_POST['submit'])){
         if(!preg_match('/^([a-zA-Z\s]+)(,\s*[a-zA-Z\s]*)*$/', $ingredients)){
             $errors['ingredients'] = 'Ingredients must be a comma separated list';
         }
-    } 
+    }
+    
+    if(array_filter($errors)){
+        // echo 'errors in the form';
+    } else {
+        // echo 'form is valid';
+        header('Location: index.php');
+    }
 }
 
 
