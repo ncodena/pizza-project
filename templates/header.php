@@ -4,11 +4,11 @@
     $_SESSION['name'] = 'Pizza Lover';
 
     if($_SERVER['QUERY_STRING'] == 'noname'){
-      // unset($_SESSION['name']);
-      session_unset();
+      unset($_SESSION['name']);
+      // session_unset();
     }
 
-    $name = $_SESSION['name'];
+    $name = $_SESSION['name'] ?? 'Pizza Guest';
  ?>
 
 <head>
